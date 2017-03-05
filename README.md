@@ -6,6 +6,8 @@
 2. WXDownloadModel是对下载文件的抽象
 3. 下载文件的相关接口都在WXDownloadManager.h文件中
 4. 具体的使用方式在ViewController.m中
+5. 支持断点续传，程序退出后进入，依旧保持着刚才的下载状态
+6. 
 
 其中比较重要的函数
 
@@ -26,4 +28,33 @@
       
 ```
 
+NSURLSessionDataDelegate
+
+```objc
+
+//收到Response之后就会调用，这里开启文件流，并可以获取文件总大小
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler
+{
+
+}
+
+//在接收数据的过程中会调用这个函数，这里通过block回调各种接收过程中的变化
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data
+{
+
+}
+
+```
+
+NSURLSessionDelegate
+
+```objc
+
+//完成时调用，关闭流，移除model并回调完成状态
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error
+{
+
+}
+
+```
 下载的时候调用这个，在block中可以拿到下载的状态，下载文件的百分比，以及完成的情况，从而更新view，具体的block参数参考WXDownloadModel.h文件
