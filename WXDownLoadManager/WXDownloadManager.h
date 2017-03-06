@@ -11,6 +11,8 @@
 #import "WXDownloadModel.h"
 
 @interface WXDownloadManager : NSObject
+//最大同时下载数目:默认1
+@property (nonatomic, assign)NSInteger maxDownloadNumber;
 
 + (instancetype)sharedManager;
 

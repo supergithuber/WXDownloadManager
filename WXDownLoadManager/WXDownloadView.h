@@ -24,6 +24,7 @@ typedef void(^deleteBlock)();
 
 @property (nonatomic, copy)NSString *deleteText;
 
+@property (nonatomic, copy)NSString *fileName;
 
 @property (nonatomic, copy)downloadBlock downloadBlock;
 @property (nonatomic, copy)deleteBlock deleteBlock;

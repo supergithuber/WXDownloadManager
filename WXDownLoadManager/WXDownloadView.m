@@ -20,6 +20,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @end
 
@@ -123,5 +124,14 @@
 - (NSString *)deleteText
 {
     return self.deleteButton.titleLabel.text;
+}
+
+- (NSString *)fileName
+{
+    return self.nameLabel.text;
+}
+- (void)setFileName:(NSString *)fileName
+{
+    self.nameLabel.text = fileName;
 }
 @end

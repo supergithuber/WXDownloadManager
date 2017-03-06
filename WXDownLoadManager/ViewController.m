@@ -13,6 +13,7 @@
 NSString * const downloadURLString1 = @"http://baobab.wdjcdn.com/14564977406580.mp4";
 NSString * const downloadURLString2 = @"http://baobab.wdjcdn.com/1442142801331138639111.mp4";
 
+
 #define kDownloadURL1 [NSURL URLWithString:downloadURLString1]
 #define kDownloadURL2 [NSURL URLWithString:downloadURLString2]
 
@@ -67,6 +68,7 @@ NSString * const downloadURLString2 = @"http://baobab.wdjcdn.com/144214280133113
     view.startButtonText = [self titleWithPercentage:percentage];
     view.currentSizeText = @"0";
     view.totalSizeText = @"0";
+    view.fileName = [[WXDownloadManager sharedManager] fileNameForURL:URL];
     
 }
 

@@ -28,6 +28,8 @@
 //["tastIdentifier":downloadModel]
 @property (nonatomic, strong)NSMutableDictionary *downloadModelDictionary;
 
+@property (nonatomic, strong)NSMutableOrderedSet *downloadAutomaticllySet;
+
 @end
 
 @implementation WXDownloadManager
@@ -82,6 +84,42 @@
     }
 }
 
+- (NSInteger)downloadingDataDask
+{
+    NSInteger number = 0;
+    for (NSURLSessionDataTask *dataTask in [_dataTaskDictionary allValues])
+    {
+        if (dataTask.state == NSURLSessionTaskStateRunning)
+        {
+            number++;
+        }
+    }
+    return number;
+}
+- (void)checkDownloadAutomaticllySet
+{
+    if (!self.downloadAutomaticllySet.count)
+    {
+        return;
+    }
+    NSURLSessionDataTask *dataTask = self.downloadAutomaticllySet.firstObject;
+    
+    [dataTask resume];
+    NSLog(@"应该要开始下载");
+    WXDownloadModel * downloadModel = [self downloadModel:dataTask];
+    if (!downloadModel)
+    {
+        return;
+    }
+    NSLog(@"downloadModel%@",downloadModel);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (downloadModel.stateBlock)
+        {
+            downloadModel.stateBlock(WXDownloadStateDownloading);
+        }
+    });
+
+}
 #pragma mark - download
 - (void)download:(NSURL *)URL
            state:(downloadStateBlock)state
@@ -147,18 +185,41 @@
     {
         return;
     }
-    [dataTask resume];
-    WXDownloadModel * downloadModel = [self downloadModel:dataTask];
-    if (!downloadModel)
+    //如果达到最大下载数量
+    if ([self downloadingDataDask] >= self.maxDownloadNumber)
     {
-        return;
-    }
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if (downloadModel.stateBlock)
+        //加入等待下载，此处不需要再调用suspend
+        //新创建的默认就是suspend，两次的suspend会导致后面的resume实效
+        [self.downloadAutomaticllySet addObject:dataTask];
+        WXDownloadModel *downloadModel = [self downloadModel:dataTask];
+        if (!downloadModel)
         {
-            downloadModel.stateBlock(WXDownloadStateDownloading);
+            return;
         }
-    });
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (downloadModel.stateBlock)
+            {
+                downloadModel.stateBlock(WXDownloadStateSuspended);
+            }
+        });
+        
+    }
+    else
+    {
+        [dataTask resume];
+        WXDownloadModel * downloadModel = [self downloadModel:dataTask];
+        if (!downloadModel)
+        {
+            return;
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (downloadModel.stateBlock)
+            {
+                downloadModel.stateBlock(WXDownloadStateDownloading);
+            }
+        });
+    }
+    
 }
 - (void)pauseDownload:(NSURL *)URL
 {
@@ -193,6 +254,7 @@
     
     [self.dataTaskDictionary removeObjectForKey:[self fileNameForURL:downloadModel.fileURL]];
     [self.downloadModelDictionary removeObjectForKey:@(task.taskIdentifier).stringValue];
+    [self checkDownloadAutomaticllySet];
     dispatch_async(dispatch_get_main_queue(), ^{
         if ([self isCompleted:downloadModel.fileURL])
         {
@@ -236,7 +298,6 @@
     NSMutableDictionary *totalLengthDictionary = [NSMutableDictionary dictionaryWithContentsOfFile:WXFilesTotalLengthPlistPath] ?: [NSMutableDictionary dictionary];
     totalLengthDictionary[[self fileNameForURL:downloadModel.fileURL]] = @(totalLength);
     [totalLengthDictionary writeToFile:WXFilesTotalLengthPlistPath atomically:YES];
-    
     //传这个才会继续调用下面的delegate函数，继续接收数据
     completionHandler(NSURLSessionResponseAllow);
     
@@ -315,6 +376,8 @@
     //remove from dic
     [dataTask cancel];
     [self.dataTaskDictionary removeObjectForKey:[self fileNameForURL:URL]];
+    //remove from set
+    [self.downloadAutomaticllySet removeObject:dataTask];
     
     //remove local file
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -348,6 +411,9 @@
     {
         [dataTask performSelector:@selector(cancel)];
     }
+    //
+    [self.downloadAutomaticllySet removeAllObjects];
+    
     //remove local file,including plist file
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSArray *fileNames = [fileManager contentsOfDirectoryAtPath:WXDownloadDirectory error:nil];
@@ -377,5 +443,17 @@
         _downloadModelDictionary = [NSMutableDictionary dictionary];
     }
     return _downloadModelDictionary;
+}
+- (NSMutableOrderedSet *)downloadAutomaticllySet
+{
+    if (!_downloadAutomaticllySet)
+    {
+        _downloadAutomaticllySet = [[NSMutableOrderedSet alloc] init];
+    }
+    return _downloadAutomaticllySet;
+}
+- (NSInteger)maxDownloadNumber
+{
+    return 1;
 }
 @end
