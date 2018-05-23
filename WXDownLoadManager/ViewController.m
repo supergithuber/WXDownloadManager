@@ -81,8 +81,8 @@ NSString * const downloadURLString2 = @"http://baobab.wdjcdn.com/144214280133113
         
     } percentage:^(long long receivedSize, long long expectedSize, CGFloat receivedPercentage) {
         
-        downloadView.currentSizeText = [NSString stringWithFormat:@"%zdMB", receivedSize / 1024 / 1024];
-        downloadView.totalSizeText = [NSString stringWithFormat:@"%zdMB", expectedSize / 1024 / 1024];
+        downloadView.currentSizeText = [NSString stringWithFormat:@"%lldMB", receivedSize / 1024 / 1024];
+        downloadView.totalSizeText = [NSString stringWithFormat:@"%lldMB", expectedSize / 1024 / 1024];
         downloadView.percentageText = [NSString stringWithFormat:@"%.f%%", receivedPercentage * 100];
         downloadView.percentage = receivedPercentage;
         
