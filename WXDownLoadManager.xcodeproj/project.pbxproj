@@ -132,7 +132,7 @@
 			children = (
 				CC5FA9341E657C000000103A /* main.m */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		CC5FA94C1E657C000000103A /* WXDownLoadManagerTests */ = {
@@ -161,7 +161,7 @@
 				CC5FA96A1E665C9C0000103A /* WXDownloadManager.h */,
 				CC5FA96B1E665C9C0000103A /* WXDownloadManager.m */,
 			);
-			name = DownManager;
+			path = DownManager;
 			sourceTree = "<group>";
 		};
 		CC5FA96D1E67F1F60000103A /* View */ = {
@@ -171,7 +171,7 @@
 				CC5FA9721E67F60D0000103A /* WXDownloadView.m */,
 				CC5FA9741E67F6200000103A /* WXDownloadView.xib */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -548,6 +548,7 @@
 				CC5FA95F1E657C000000103A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CC5FA9601E657C000000103A /* Build configuration list for PBXNativeTarget "WXDownLoadManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +557,7 @@
 				CC5FA9621E657C000000103A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CC5FA9631E657C000000103A /* Build configuration list for PBXNativeTarget "WXDownLoadManagerUITests" */ = {
 			isa = XCConfigurationList;
@@ -564,6 +566,7 @@
 				CC5FA9651E657C000000103A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
