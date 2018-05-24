@@ -1,6 +1,6 @@
 ## WXDownloadImage
 
-## *这个库使用不方便，已经移到coding私有库，这里不再更新，可以使用另一个库[WXXDownloadManager](!https://github.com/supergithuber/WXXDownloadManager.git)*
+## *这个库使用不方便，已经移到coding私有库，这里不再更新，可以使用另一个库[WXXDownloadManager](https://github.com/supergithuber/WXXDownloadManager.git)*
 
 ![image](https://github.com/supergithuber/WXDownloadManager/blob/master/example.gif)
 
