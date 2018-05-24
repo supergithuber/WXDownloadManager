@@ -1,5 +1,7 @@
 ## WXDownloadImage
 
+## *这个库使用不方便，已经移到coding私有库，这里不再更新，可以使用另一个库[WXXDownloadManager](!https://github.com/supergithuber/WXXDownloadManager.git)*
+
 ![image](https://github.com/supergithuber/WXDownloadManager/blob/master/example.gif)
 
 1. 基于URLSession进行封装的下载组件，可以用来并行下载文件，取消文件单个文件下载，取消全部文件的下载
