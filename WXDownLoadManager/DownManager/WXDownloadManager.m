@@ -454,6 +454,9 @@
 }
 - (NSInteger)maxDownloadNumber
 {
+    if (_maxDownloadNumber){
+        return _maxDownloadNumber;
+    }
     return 1;
 }
 @end
