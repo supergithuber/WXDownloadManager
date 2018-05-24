@@ -7,7 +7,7 @@
 1. 基于URLSession进行封装的下载组件，可以用来并行下载文件，取消文件单个文件下载，取消全部文件的下载
 2. WXDownloadModel是对下载文件的抽象
 3. 下载文件的相关接口都在WXDownloadManager.h文件中
-4. 具体的使用方式在ViewController.m中
+4. 具体的使用Demo在ViewController.m中
 5. 支持断点续传，程序退出后进入，依旧保持着刚才的下载状态
 6. 支持设置最大同时下载数目maxDownloadNumber，多出来的任务会挂起，可以随时取消和删除
 7. 源码中有遇到的所有坑和注意点，可以参考下
