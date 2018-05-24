@@ -335,6 +335,7 @@
     return self.downloadModelDictionary[@(dataTask.taskIdentifier).stringValue];
 }
 #pragma mark - queryDictionary
+//根据plist总大小和文件已经下载大小是否一致来判断
 - (BOOL)isCompleted:(NSURL *)URL
 {
     if ([self totalLength:URL] != 0)
