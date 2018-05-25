@@ -60,3 +60,21 @@ NSURLSessionDelegate
 
 ```
 下载的时候调用这个，在block中可以拿到下载的状态，下载文件的百分比，以及完成的情况，从而更新view，具体的block参数参考WXDownloadModel.h文件
+
+## Usage 
+
+### Carthage
+
+add this to your cartfile
+
+```
+github "supergithuber/WXDownloadManager" == 0.5.0
+```
+
+### Manual
+
+download project then Drag "WXDownLoadManager/DownManager" folder to your project
+
+or
+
+drag DownloadManager.framework to your project
