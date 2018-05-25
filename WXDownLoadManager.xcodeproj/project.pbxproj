@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C79DCCA420B7AD7000C13117 /* DownloadManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C79DCCA220B7AD7000C13117 /* DownloadManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C79DCCAD20B7AD8600C13117 /* WXDownloadModel.h in Headers */ = {isa = PBXBuildFile; fileRef = CC5FA9671E665C690000103A /* WXDownloadModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C79DCCAE20B7AD8600C13117 /* WXDownloadManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CC5FA96A1E665C9C0000103A /* WXDownloadManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C79DCCAF20B7AD8D00C13117 /* WXDownloadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5FA9681E665C690000103A /* WXDownloadModel.m */; };
+		C79DCCB020B7AD8D00C13117 /* WXDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5FA96B1E665C9C0000103A /* WXDownloadManager.m */; };
 		CC5FA9351E657C000000103A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5FA9341E657C000000103A /* main.m */; };
 		CC5FA9381E657C000000103A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5FA9371E657C000000103A /* AppDelegate.m */; };
 		CC5FA93B1E657C000000103A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5FA93A1E657C000000103A /* ViewController.m */; };
@@ -22,6 +27,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C79DCCA520B7AD7000C13117 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC5FA9281E657C000000103A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C79DCC9F20B7AD7000C13117;
+			remoteInfo = DownloadManager;
+		};
 		CC5FA94A1E657C000000103A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CC5FA9281E657C000000103A /* Project object */;
@@ -38,7 +50,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C79DCCAC20B7AD7000C13117 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		C79DCCA020B7AD7000C13117 /* DownloadManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DownloadManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C79DCCA220B7AD7000C13117 /* DownloadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloadManager.h; sourceTree = "<group>"; };
+		C79DCCA320B7AD7000C13117 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC5FA9301E657C000000103A /* WXDownLoadManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WXDownLoadManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC5FA9341E657C000000103A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CC5FA9361E657C000000103A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -65,6 +93,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C79DCC9C20B7AD7000C13117 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CC5FA92D1E657C000000103A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -89,12 +124,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C79DCCA120B7AD7000C13117 /* DownloadManager */ = {
+			isa = PBXGroup;
+			children = (
+				C79DCCA220B7AD7000C13117 /* DownloadManager.h */,
+				C79DCCA320B7AD7000C13117 /* Info.plist */,
+			);
+			path = DownloadManager;
+			sourceTree = "<group>";
+		};
 		CC5FA9271E657C000000103A = {
 			isa = PBXGroup;
 			children = (
 				CC5FA9321E657C000000103A /* WXDownLoadManager */,
 				CC5FA94C1E657C000000103A /* WXDownLoadManagerTests */,
 				CC5FA9571E657C000000103A /* WXDownLoadManagerUITests */,
+				C79DCCA120B7AD7000C13117 /* DownloadManager */,
 				CC5FA9311E657C000000103A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,6 +150,7 @@
 				CC5FA9301E657C000000103A /* WXDownLoadManager.app */,
 				CC5FA9491E657C000000103A /* WXDownLoadManagerTests.xctest */,
 				CC5FA9541E657C000000103A /* WXDownLoadManagerUITests.xctest */,
+				C79DCCA020B7AD7000C13117 /* DownloadManager.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -176,7 +222,38 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		C79DCC9D20B7AD7000C13117 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C79DCCA420B7AD7000C13117 /* DownloadManager.h in Headers */,
+				C79DCCAD20B7AD8600C13117 /* WXDownloadModel.h in Headers */,
+				C79DCCAE20B7AD8600C13117 /* WXDownloadManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		C79DCC9F20B7AD7000C13117 /* DownloadManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C79DCCAB20B7AD7000C13117 /* Build configuration list for PBXNativeTarget "DownloadManager" */;
+			buildPhases = (
+				C79DCC9B20B7AD7000C13117 /* Sources */,
+				C79DCC9C20B7AD7000C13117 /* Frameworks */,
+				C79DCC9D20B7AD7000C13117 /* Headers */,
+				C79DCC9E20B7AD7000C13117 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DownloadManager;
+			productName = DownloadManager;
+			productReference = C79DCCA020B7AD7000C13117 /* DownloadManager.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		CC5FA92F1E657C000000103A /* WXDownLoadManager */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CC5FA95D1E657C000000103A /* Build configuration list for PBXNativeTarget "WXDownLoadManager" */;
@@ -184,10 +261,12 @@
 				CC5FA92C1E657C000000103A /* Sources */,
 				CC5FA92D1E657C000000103A /* Frameworks */,
 				CC5FA92E1E657C000000103A /* Resources */,
+				C79DCCAC20B7AD7000C13117 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C79DCCA620B7AD7000C13117 /* PBXTargetDependency */,
 			);
 			name = WXDownLoadManager;
 			productName = WXDownLoadManager;
@@ -239,6 +318,11 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Wuxi;
 				TargetAttributes = {
+					C79DCC9F20B7AD7000C13117 = {
+						CreatedOnToolsVersion = 9.3.1;
+						DevelopmentTeam = KYFVDC483X;
+						ProvisioningStyle = Automatic;
+					};
 					CC5FA92F1E657C000000103A = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = KYFVDC483X;
@@ -272,11 +356,19 @@
 				CC5FA92F1E657C000000103A /* WXDownLoadManager */,
 				CC5FA9481E657C000000103A /* WXDownLoadManagerTests */,
 				CC5FA9531E657C000000103A /* WXDownLoadManagerUITests */,
+				C79DCC9F20B7AD7000C13117 /* DownloadManager */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C79DCC9E20B7AD7000C13117 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CC5FA92E1E657C000000103A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -305,6 +397,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C79DCC9B20B7AD7000C13117 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C79DCCAF20B7AD8D00C13117 /* WXDownloadModel.m in Sources */,
+				C79DCCB020B7AD8D00C13117 /* WXDownloadManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CC5FA92C1E657C000000103A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -337,6 +438,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C79DCCA620B7AD7000C13117 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C79DCC9F20B7AD7000C13117 /* DownloadManager */;
+			targetProxy = C79DCCA520B7AD7000C13117 /* PBXContainerItemProxy */;
+		};
 		CC5FA94B1E657C000000103A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CC5FA92F1E657C000000103A /* WXDownLoadManager */;
@@ -369,6 +475,80 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C79DCCA920B7AD7000C13117 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KYFVDC483X;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = DownloadManager/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sivanwu.hei.DownloadManager;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C79DCCAA20B7AD7000C13117 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KYFVDC483X;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = DownloadManager/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sivanwu.hei.DownloadManager;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		CC5FA95B1E657C000000103A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -463,6 +643,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = KYFVDC483X;
 				INFOPLIST_FILE = WXDownLoadManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -475,6 +656,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = KYFVDC483X;
 				INFOPLIST_FILE = WXDownLoadManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -532,6 +714,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C79DCCAB20B7AD7000C13117 /* Build configuration list for PBXNativeTarget "DownloadManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C79DCCA920B7AD7000C13117 /* Debug */,
+				C79DCCAA20B7AD7000C13117 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CC5FA92B1E657C000000103A /* Build configuration list for PBXProject "WXDownLoadManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
