@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios
   s.author             = { "sivanWu" => "1984430988@qq.com" }
   s.source       = { :git => "https://github.com/supergithuber/WXDownloadManager.git", :tag => "0.5.0" }
+  s.frameworks = "UIKit", "Foundation"
   s.source_files  = "WXDownloadManager/DownManager/*.{h,m}"
   s.requires_arc = true
 end
