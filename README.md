@@ -71,6 +71,13 @@ add this to your cartfile
 github "supergithuber/WXDownloadManager" == 0.5.0
 ```
 
+### Pod
+
+```
+pod 'WXDownloadManager', '~> 0.5.0'
+```
+
+
 ### Manual
 
 download project then Drag "WXDownLoadManager/DownManager" folder to your project
