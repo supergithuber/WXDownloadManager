@@ -85,3 +85,6 @@ download project then Drag "WXDownLoadManager/DownManager" folder to your projec
 or
 
 drag DownloadManager.framework to your project
+
+
+FriendlyLink:[support cocoaPod](https://www.jianshu.com/p/756f36b2a672)
